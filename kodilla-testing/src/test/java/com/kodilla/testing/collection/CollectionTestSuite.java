@@ -29,9 +29,12 @@ public class CollectionTestSuite {
     @DisplayName("When given a normal list, only even numbers should be returned")
     @Test
     public void testOddNumbersExterminatorNormalList() {
-        List<Integer> l = Arrays.asList(1,2,3,4,5,6);
+        List<Integer> l = Arrays.asList(1,2,3,4,5,6,7);
         OddNumbersExterminator one = new OddNumbersExterminator();
         List<Integer> result = one.exterminate(l);
         Assertions.assertEquals(3, result.size());
+        Assertions.assertEquals(2, result.get(0));
+        Assertions.assertEquals(4, result.get(1));
+        Assertions.assertEquals(6, result.get(2));
     }
 }

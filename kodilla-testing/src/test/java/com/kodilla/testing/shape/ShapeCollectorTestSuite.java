@@ -22,7 +22,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addShape(circle);
 
             //Then
-            Assertions.assertEquals(shapeCollector.getFigure(0), circle);
+            Assertions.assertEquals(circle, shapeCollector.getFigure(0));
         }
 
         @DisplayName("Remove existing shape")
@@ -38,6 +38,7 @@ public class ShapeCollectorTestSuite {
 
             //Then
             Assertions.assertTrue(result);
+            Assertions.assertEquals(0, shapeCollector.getSize());
         }
 
         @DisplayName("When given a non-empty collection, a non-null figure should be returned")

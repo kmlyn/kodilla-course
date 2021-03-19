@@ -13,11 +13,8 @@ public final class Library {
     private LibraryDbController libraryDbController;
 
     @Autowired
-    public Library(final LibraryDbController libraryDbController) {
+    public void setLibraryDbController(LibraryDbController libraryDbController) {
         this.libraryDbController = libraryDbController;
-    }
-
-    public Library() {
     }
 
     public void saveToDb() {

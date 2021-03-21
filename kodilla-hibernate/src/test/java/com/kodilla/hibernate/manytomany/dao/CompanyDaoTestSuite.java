@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
@@ -58,5 +61,22 @@ class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+    }
+
+    @Test
+    public void testStartsWith() {
+        //Given
+        Company greyMatter = new Company("Grey Matter");
+
+        companyDao.save(greyMatter);
+
+        //When
+        List<Company> startWithGre = companyDao.startsWith("Gre");
+
+        //Then
+        assertEquals(1, startWithGre.size());
+
+        //Cleanup
+        companyDao.deleteById(greyMatter.getId());
     }
 }

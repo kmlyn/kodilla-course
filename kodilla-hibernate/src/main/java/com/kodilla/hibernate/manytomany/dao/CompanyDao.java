@@ -12,4 +12,5 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
     List<Company> startsWith(@Param("FRAGMENT") String nameFragment);
+    List<Company> contains(@Param("FRAGMENT") String nameFragment);
 }

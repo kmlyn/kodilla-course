@@ -12,4 +12,5 @@ import java.util.List;
 @Transactional
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
     List<Employee> findByLastName(@Param("LASTNAME") String lastname);
+    List<Employee> lastNameContains(@Param("FRAGMENT") String fragment);
 }

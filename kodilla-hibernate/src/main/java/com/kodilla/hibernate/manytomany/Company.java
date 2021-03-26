@@ -10,6 +10,10 @@ import java.util.List;
         query = "SELECT * FROM companies WHERE SUBSTRING(company_name, 1, 3) = :FRAGMENT",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.contains",
+        query = "FROM Company WHERE name LIKE :FRAGMENT"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
